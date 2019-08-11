@@ -1,12 +1,24 @@
-for (i = 0; i < 5; i++) {}
-let userChoice = prompt("Choose rock, paper or scissors.");
-let gameOptions = ["rock", "paper", "scissors"];
 let userWins = 0;
 let computerWins = 0;
 
-const randomCompChoice =
-  gameOptions[Math.floor(Math.random() * gameOptions.length)];
-//random computer throw is working
+function userPrompt() {
+  return (userChoice = prompt("Choose rock, paper or scissors."));
+}
+
+function computerChoice() {
+  let gameOptions = ["rock", "paper", "scissors"];
+  return (randomCompChoice =
+    gameOptions[Math.floor(Math.random() * gameOptions.length)]);
+}
+//so I know it aint CHEATIN' :\
+console.log(computerChoice());
+
+while (userWins < 5 || computerWins < 5) {
+  userPrompt();
+  computerChoice();
+  console.log(computerChoice());
+  whoWins();
+}
 
 function whoWins() {
   if (userChoice === "rock" && randomCompChoice === "scissors") {
@@ -33,11 +45,6 @@ function checkWins() {
   } else if (computerWins === 5) {
     alert("You lost the RNG fight T-T");
   }
+  console.log("Your wins: " + userWins);
+  console.log("Enemy wins: " + computerWins);
 }
-
-// for (i = 0; userWins < 5 || computerWins < 5; i++) {
-//   whoWins();
-//   break;
-// }
-
-// whoWins();
