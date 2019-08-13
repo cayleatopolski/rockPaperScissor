@@ -11,7 +11,7 @@ function computerChoice() {
     gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 //so I know it aint CHEATIN' :\
-console.log(computerChoice());
+// console.log(computerChoice());
 
 while (userWins < 5 || computerWins < 5) {
   userPrompt();
